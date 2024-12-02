@@ -1,8 +1,3 @@
-package oop;
-
-import java.util.Arrays;
-import java.util.Comparator;
-
 
 /**
  * Nous sommes intéressés à prédire le succès d'un étudiant à
@@ -58,6 +53,12 @@ import java.util.Comparator;
  * Ne réinventez donc pas l'eau chaude et n'hésitez pas à les utiliser.
  */
 
+package oop;
+
+import java.util.Arrays;
+import java.util.Comparator;
+
+
 public class KNN {
 
     static class Student {
@@ -71,6 +72,7 @@ public class KNN {
         }
     }
 
+    // MON CODE DEBUT 
     static class Resultat {
         final double distanceeucli;
         final boolean succes;
@@ -78,11 +80,6 @@ public class KNN {
         public Resultat(double distanceeucli, boolean succes) {
             this.distanceeucli = distanceeucli;
             this.succes = succes;
-        }
-
-        @Override
-        public String toString() {
-            return "Resultat{distanceeucli='" + distanceeucli + "', bool=" + succes + "}";
         }
     }
 
@@ -96,23 +93,19 @@ public class KNN {
         int count = 0 ;
         for(int j=0 ; j<k ; j++){
             if(resultats[j].succes == true){
-                count+=1;
-            }
+                count+=1;}
         }
         boolean succeed = false ;
         if(count > (k/2) ){
-            succeed = true ;
-        }
+            succeed = true ;}
         return succeed;
     }
-
-
+    //MON CODE FIN 
 
     public static double euclideanDistance(double[] a, double[] b) {
         double dist = 0;
         for (int i = 0; i < a.length; i++) {
-            dist += Math.pow(a[i] - b[i], 2);
-        }
+            dist += Math.pow(a[i] - b[i], 2);}
         return Math.sqrt(dist);
     }
 
